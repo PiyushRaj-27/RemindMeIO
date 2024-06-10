@@ -1,7 +1,7 @@
 'use client'
 import Link from "next/link"
 import {useAuthState} from "react-firebase-hooks/auth"
-import {auth, app} from "@/app/firebase/config"
+import {auth} from "@/app/firebase/config"
 import { signOut } from "firebase/auth";
 import { useRouter } from "next/navigation";
 export default function Navbar(){
@@ -29,7 +29,9 @@ export default function Navbar(){
                 </div>
     
                 <div className="text-white font-normal px-2 py-2 ml-6">
+                    <Link href="/reminders">
                     Reminders
+                    </Link>
                 </div>
                 </div>
                
@@ -60,7 +62,9 @@ export default function Navbar(){
             </div>
 
             <div className="text-white font-normal px-2 py-2 ml-6">
-                Reminders
+                    <Link href="/reminders">
+                    Reminders
+                    </Link>
             </div>
             </div>
            

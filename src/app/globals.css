@@ -9,6 +9,16 @@
   .sub-btn{
     @apply py-2 px-4 bg-gray-900 rounded-md mt-2 mb-2
   }
+  .loader {
+    border-top-color: #ffffff; /* White border for the loader */
+    animation: spinner 1.5s linear infinite;
+  }
+  
+  @keyframes spinner {
+    to {
+      transform: rotate(360deg);
+    }
+  }
 }
 :root {
   --foreground-rgb: 0, 0, 0;
