@@ -18,10 +18,6 @@ Follow these steps to set up the project locally from GitHub.
 
 1.  **Clone the repository:**
 
-    bash
-
-    Copy code
-
     `git clone https://github.com/yourusername/RemindMeIO.git
     cd RemindMeIO`
 
@@ -29,17 +25,9 @@ Follow these steps to set up the project locally from GitHub.
 
     Using npm:
 
-    bash
-
-    Copy code
-
     `npm install`
 
     Or using Yarn:
-
-    bash
-
-    Copy code
 
     `yarn install`
 
@@ -55,10 +43,6 @@ Follow these steps to set up the project locally from GitHub.
 
     -   Create a `.env.local` file in the root of your project and add your Firebase configuration:
 
-        plaintext
-
-        Copy code
-
         `NEXT_PUBLIC_FIREBASE_API_KEY=your_api_key
         NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_auth_domain
         NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
@@ -70,25 +54,13 @@ Follow these steps to set up the project locally from GitHub.
 
     Using npm:
 
-    bash
-
-    Copy code
-
     `npm run dev`
 
     Or using Yarn:
 
-    bash
-
-    Copy code
-
     `yarn dev`
 
 5.  **Open your browser and navigate to:**
-
-    plaintext
-
-    Copy code
 
     `http://localhost:3000`
 
@@ -100,17 +72,9 @@ To lint the project using ESLint, run:
 
 Using npm:
 
-bash
-
-Copy code
-
 `npm run lint`
 
 Or using Yarn:
-
-bash
-
-Copy code
 
 `yarn lint`
 
@@ -120,17 +84,9 @@ To build the project for production, run:
 
 Using npm:
 
-bash
-
-Copy code
-
 `npm run build`
 
 Or using Yarn:
-
-bash
-
-Copy code
 
 `yarn build`
 
