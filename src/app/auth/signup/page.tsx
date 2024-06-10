@@ -24,10 +24,8 @@ export default function signUp(){
 
     async function handleSubmit(event: FormEvent<HTMLFormElement>){
         event.preventDefault();
-        console.log("form submitting");
         try{
             const res = await createUserWithEmailAndPassword(email, pass);
-            console.log(res);
             setEmail("");
             setPass("");
             setCpass("");

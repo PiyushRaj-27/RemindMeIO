@@ -19,11 +19,9 @@ export default function LoginComp(){
     }
     async function handleSubmit(event: ChangeEvent<HTMLFormElement>){
         event.preventDefault();
-        console.log("form submitting");
 
         try{
             const res = await signInWithEmailAndPassword(email, pass);
-            console.log(res);
             setEmail("");
             setPass("");
             router.push("/");
