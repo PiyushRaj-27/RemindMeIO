@@ -1,7 +1,9 @@
 'use client'
 
 import React, { useState } from 'react';
-
+import {useAuthState} from "react-firebase-hooks/auth"
+import {auth, db} from "@/app/firebase/config"
+import {collection, getDocs, addDoc} from "firebase/firestore"
 type ReminderType = 'Birthday' | 'Anniversary' | 'Meeting' | 'Other';
 
 interface Reminder {
@@ -19,6 +21,8 @@ const ReminderForm: React.FC = () => {
     title: '',
   });
 
+  const [user] = useAuthState(auth);
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
   ) => {
@@ -29,18 +33,29 @@ const ReminderForm: React.FC = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Submit the form to your backend or handle it as required
-    console.log(form);
+    if (user && user.email) {
+      const reminderData = {
+        ...form,
+        recipientEmail: user.email,
+      };
 
-    // to be done after a successfull submition!
-    setForm({
-    date: '',
-    message: '',
-    type: 'Birthday',
-    title: '',
-  });
+      try {
+        const docRef = await addDoc(collection(db, 'reminders'), reminderData);
+        console.log('Document written with ID: ', docRef.id);
+        
+        // Reset form state after successful submission
+        setForm({
+          date: '',
+          message: '',
+          type: 'Birthday',
+          title: '',
+        });
+      } catch (e) {
+        console.error('Error adding document: ', e);
+      }
+    }
   };
 
   return (
