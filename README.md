@@ -1,5 +1,6 @@
 RemindMeIO
 ==========
+Repository for internship at Innovate
 
 RemindMeIO is a web app that helps you stay on top of important events like birthdays, anniversaries, and more. Built with Next.js, TypeScript, ESLint, TailwindCSS, and Firebase, RemindMeIO ensures you never miss a moment!
 
